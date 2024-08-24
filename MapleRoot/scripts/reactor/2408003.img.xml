@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="2408003.img">
+    <imgdir name="info">
+        <string name="info" value="Invisible Reactor: Shake Screen"/>
+        <string name="link" value="9201000"/>
+    </imgdir>
+</imgdir>

@@ -1,0 +1,32 @@
+#pragma once
+enum WeaponType {
+	OH_SWORD = 0x1E,
+	OH_AXE = 0x1F,
+	OH_BLUNT = 0x20,
+
+	DAGGER = 0x21,
+	SUBDAGGER = 0x22,
+
+	WAND = 0x25,
+	STAFF = 0x26, 
+	
+	BAREHAND = 0x27,
+
+	TH_SWORD = 0x28,
+	TH_AXE = 0x29,
+	TH_BLUNT = 0x2A,
+
+	SPEAR = 0x2B,
+	POLEARM = 0x2C,
+
+	// crap
+	WT_BOW = 0x2D,
+	WT_CROSSBOW = 0x2E,
+	WT_THROWINGGLOVE = 0x2F,
+	WT_KNUCKLE = 0x30,
+	WT_GUN = 0x31,
+	WT_COUNT = 0x11,
+	WT_EXCOUNT = 0x12,
+
+	BIRD_FOOT = 99,
+};

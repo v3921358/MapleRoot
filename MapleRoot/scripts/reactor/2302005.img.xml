@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="2302005.img">
+    <imgdir name="info">
+        <string name="info" value="Mount Info: Kenta&apos;s Report"/>
+        <string name="link" value="2302000"/>
+        <int name="removeInFieldSet" value="1"/>
+    </imgdir>
+    <string name="action" value="tameItem0"/>
+</imgdir>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{8F9ED5E9-292B-4FD3-9ED3-6B8DF0904EEA}</ProjectGuid>
+    <RootNamespace>ijl15</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ijl15</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>ijl15</TargetName>
+    <OutDir>C:\Users\Juice\Desktop\TheDLL\out</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>ijl15</TargetName>
+    <IntDir>$(SolutionDir)Intermediate\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include\wil;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>comsuppw.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include\wil;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <CompileAsManaged>false</CompileAsManaged>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>comsuppw.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;discord_game_sdk.dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>powershell "cd G:\TdotMS\TdotMS.exe; start-process -filepath 'G:\TdotMS\TdotMS.exe'"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="API\MapleStory\Type\SKILLENTRY.cpp" />
+    <ClCompile Include="API\MapleStory\Type\ZXString.cpp" />
+    <ClCompile Include="Discord\achievement_manager.cpp" />
+    <ClCompile Include="Discord\activity_manager.cpp" />
+    <ClCompile Include="Discord\application_manager.cpp" />
+    <ClCompile Include="Discord\core.cpp" />
+    <ClCompile Include="Discord\image_manager.cpp" />
+    <ClCompile Include="Discord\lobby_manager.cpp" />
+    <ClCompile Include="Discord\network_manager.cpp" />
+    <ClCompile Include="Discord\overlay_manager.cpp" />
+    <ClCompile Include="Discord\relationship_manager.cpp" />
+    <ClCompile Include="Discord\storage_manager.cpp" />
+    <ClCompile Include="Discord\store_manager.cpp" />
+    <ClCompile Include="Discord\types.cpp" />
+    <ClCompile Include="Discord\user_manager.cpp" />
+    <ClCompile Include="Discord\voice_manager.cpp" />
+    <ClCompile Include="discord_worker.cpp" />
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="Funcs.cpp" />
+    <ClCompile Include="MapleClientCollectionTypes\ZAllocEx.cpp" />
+    <ClCompile Include="MapleHook.cpp" />
+    <ClCompile Include="NMCO\NMDataObject.cpp" />
+    <ClCompile Include="NMCO\NMFunctionObject.cpp" />
+    <ClCompile Include="NMCO\NMSerializable.cpp" />
+    <ClCompile Include="Proxy\ijl15.cpp" />
+    <ClCompile Include="shavitstuff\BossHP.cpp" />
+    <ClCompile Include="shavitstuff\res.cpp" />
+    <ClCompile Include="SkillEdits\Activeskill.cpp" />
+    <ClCompile Include="shavitstuff\user.cpp" />
+    <ClCompile Include="WinHook.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="API\MapleStory\Static.h" />
+    <ClInclude Include="API\MapleStory\Type\Additional.h" />
+    <ClInclude Include="API\MapleStory\Type\AdditionPsd.h" />
+    <ClInclude Include="API\MapleStory\Type\ALLIANCEDATA.h" />
+    <ClInclude Include="API\MapleStory\Type\Assert.h" />
+    <ClInclude Include="API\MapleStory\Type\BasicStat.h" />
+    <ClInclude Include="API\MapleStory\Type\CharacterData.h" />
+    <ClInclude Include="API\MapleStory\Type\CInPacket.h" />
+    <ClInclude Include="API\MapleStory\Type\CMobTemplate.h" />
+    <ClInclude Include="API\MapleStory\Type\CRand32.h" />
+    <ClInclude Include="API\MapleStory\Type\CRTTI.h" />
+    <ClInclude Include="API\MapleStory\Type\CUser.h" />
+    <ClInclude Include="API\MapleStory\Type\FUNCKEY_MAPPED.h" />
+    <ClInclude Include="API\MapleStory\Type\GW_CharacterStat.h" />
+    <ClInclude Include="API\MapleStory\Type\IUnknown.h" />
+    <ClInclude Include="API\MapleStory\Type\MobStat.h" />
+    <ClInclude Include="API\MapleStory\Type\PassiveSkillData.h" />
+    <ClInclude Include="API\MapleStory\Type\SecondaryStat.h" />
+    <ClInclude Include="API\MapleStory\Type\SECPOINT.h" />
+    <ClInclude Include="API\MapleStory\Type\SECRECT.h" />
+    <ClInclude Include="API\MapleStory\Type\SE_TYPE.h" />
+    <ClInclude Include="API\MapleStory\Type\SKILLENTRY.h" />
+    <ClInclude Include="API\MapleStory\Type\SKILLLEVELDATA.h" />
+    <ClInclude Include="API\MapleStory\Type\TSingleton.h" />
+    <ClInclude Include="API\MapleStory\Type\WeaponType.h" />
+    <ClInclude Include="API\MapleStory\Type\ZArray.h" />
+    <ClInclude Include="API\MapleStory\Type\ZList.h" />
+    <ClInclude Include="API\MapleStory\Type\ZMap.h" />
+    <ClInclude Include="API\MapleStory\Type\ZRef.h" />
+    <ClInclude Include="API\MapleStory\Type\ZRefCounted.h" />
+    <ClInclude Include="API\MapleStory\Type\ZtlSecure.h" />
+    <ClInclude Include="API\MapleStory\Type\ZXString.h" />
+    <ClInclude Include="Discord\achievement_manager.h" />
+    <ClInclude Include="Discord\activity_manager.h" />
+    <ClInclude Include="Discord\application_manager.h" />
+    <ClInclude Include="Discord\core.h" />
+    <ClInclude Include="Discord\discord.h" />
+    <ClInclude Include="Discord\event.h" />
+    <ClInclude Include="Discord\ffi.h" />
+    <ClInclude Include="Discord\image_manager.h" />
+    <ClInclude Include="Discord\lobby_manager.h" />
+    <ClInclude Include="Discord\network_manager.h" />
+    <ClInclude Include="Discord\overlay_manager.h" />
+    <ClInclude Include="Discord\relationship_manager.h" />
+    <ClInclude Include="Discord\storage_manager.h" />
+    <ClInclude Include="Discord\store_manager.h" />
+    <ClInclude Include="Discord\types.h" />
+    <ClInclude Include="Discord\user_manager.h" />
+    <ClInclude Include="Discord\voice_manager.h" />
+    <ClInclude Include="DiscordRichPresence.h" />
+    <ClInclude Include="HackStuff\loginstuff.h" />
+    <ClInclude Include="HackStuff\PacketNew.h" />
+    <ClInclude Include="MapleClientCollectionTypes\CInPacket.h" />
+    <ClInclude Include="MapleClientCollectionTypes\TSecType.h" />
+    <ClInclude Include="MapleClientCollectionTypes\winhook_types.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZAllocAnonSelector.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZAllocBase.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZAllocEx.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZAllocStrSelector.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZArray.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZFatalSection.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZList.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZMap.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZRecyclable.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZRecyclableAvBuffer.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZRecyclableStatic.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZRef.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZRefCounted.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZRefCountedAccessor.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZRefCountedDummy.h" />
+    <ClInclude Include="MapleClientCollectionTypes\ZtlSecure.h" />
+    <ClInclude Include="rulaxStuff.h" />
+    <ClInclude Include="include\wil\com.h" />
+    <ClInclude Include="include\wil\common.h" />
+    <ClInclude Include="include\wil\com_apartment_variable.h" />
+    <ClInclude Include="include\wil\coroutine.h" />
+    <ClInclude Include="include\wil\cppwinrt.h" />
+    <ClInclude Include="include\wil\cppwinrt_authoring.h" />
+    <ClInclude Include="include\wil\cppwinrt_helpers.h" />
+    <ClInclude Include="include\wil\cppwinrt_wrl.h" />
+    <ClInclude Include="include\wil\filesystem.h" />
+    <ClInclude Include="include\wil\nt_result_macros.h" />
+    <ClInclude Include="include\wil\registry.h" />
+    <ClInclude Include="include\wil\registry_helpers.h" />
+    <ClInclude Include="include\wil\resource.h" />
+    <ClInclude Include="include\wil\result.h" />
+    <ClInclude Include="include\wil\result_macros.h" />
+    <ClInclude Include="include\wil\result_originate.h" />
+    <ClInclude Include="include\wil\rpc_helpers.h" />
+    <ClInclude Include="include\wil\safecast.h" />
+    <ClInclude Include="include\wil\stl.h" />
+    <ClInclude Include="include\wil\token_helpers.h" />
+    <ClInclude Include="include\wil\Tracelogging.h" />
+    <ClInclude Include="include\wil\traceloggingconfig.h" />
+    <ClInclude Include="include\wil\win32_helpers.h" />
+    <ClInclude Include="include\wil\win32_result_macros.h" />
+    <ClInclude Include="include\wil\windowing.h" />
+    <ClInclude Include="include\wil\winrt.h" />
+    <ClInclude Include="include\wil\wistd_config.h" />
+    <ClInclude Include="include\wil\wistd_functional.h" />
+    <ClInclude Include="include\wil\wistd_memory.h" />
+    <ClInclude Include="include\wil\wistd_type_traits.h" />
+    <ClInclude Include="include\wil\wrl.h" />
+    <ClInclude Include="INIReader.h" />
+    <ClInclude Include="moreshit.h" />
+    <ClInclude Include="shavitstuff\BossHP.h" />
+    <ClInclude Include="shavitstuff\chair_rel_move.h" />
+    <ClInclude Include="shavitstuff\IWzResMan.h" />
+    <ClInclude Include="shavitstuff\aquila.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="detours.h" />
+    <ClInclude Include="EzorziaShit.h" />
+    <ClInclude Include="fmt\args.h" />
+    <ClInclude Include="fmt\chrono.h" />
+    <ClInclude Include="fmt\color.h" />
+    <ClInclude Include="fmt\compile.h" />
+    <ClInclude Include="fmt\core.h" />
+    <ClInclude Include="fmt\format-inl.h" />
+    <ClInclude Include="fmt\format.h" />
+    <ClInclude Include="fmt\locale.h" />
+    <ClInclude Include="fmt\os.h" />
+    <ClInclude Include="fmt\ostream.h" />
+    <ClInclude Include="fmt\printf.h" />
+    <ClInclude Include="fmt\ranges.h" />
+    <ClInclude Include="fmt\xchar.h" />
+    <ClInclude Include="Funcs.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="HackStuff\asm.h" />
+    <ClInclude Include="HackStuff\haxAddresses.h" />
+    <ClInclude Include="HackStuff\Packet.h" />
+    <ClInclude Include="HackStuff\structs.h" />
+    <ClInclude Include="NMCO\NMDataObject.h" />
+    <ClInclude Include="NMCO\NMFunctionObject.h" />
+    <ClInclude Include="NMCO\NMGeneral.h" />
+    <ClInclude Include="NMCO\NMSerializable.h" />
+    <ClInclude Include="Proxy\ijl15.h" />
+    <ClInclude Include="shavitstuff\lazy_import.h" />
+    <ClInclude Include="shavitstuff\otherstuffsmile.h" />
+    <ClInclude Include="shavitstuff\res.h" />
+    <ClInclude Include="SkillEdits\ActiveSkill.h" />
+    <ClInclude Include="SkillEdits\anticheat.h" />
+    <ClInclude Include="SkillEdits\asmStoof.h" />
+    <ClInclude Include="SkillEdits\CharacterDataEx.h" />
+    <ClInclude Include="SkillEdits\conditions.h" />
+    <ClInclude Include="SkillEdits\formulas.h" />
+    <ClInclude Include="SkillEdits\otherstuff.h" />
+    <ClInclude Include="SkillEdits\SkillEffects.h" />
+    <ClInclude Include="Template\Singleton.h" />
+    <ClInclude Include="API\YeehawHooks.h" />
+    <ClInclude Include="shavitstuff\xorstr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="discord_game_sdk.dll" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="discord_game_sdk.dll.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets'))" />
+  </Target>
+</Project>
